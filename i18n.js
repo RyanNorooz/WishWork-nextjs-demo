@@ -43,8 +43,8 @@ const formatDatetime = (value, lang, options = { toFormat: 'YYYY-MM-DD' }) => {
 
 module.exports = {
   i18n: {
-    defaultLocale: 'en',
-    locales: ['fa', 'en', 'de'],
+    defaultLocale: 'fa',
+    locales: ['fa', 'en'],
     localeDetection: false,
 
     // custom config
@@ -58,12 +58,6 @@ module.exports = {
       en: {
         key: 'en',
         label: 'English',
-        direction: 'ltr',
-        fontFamily: ['Ridley', 'Rotunda'],
-      },
-      de: {
-        key: 'de',
-        label: 'Dutch',
         direction: 'ltr',
         fontFamily: ['Ridley', 'Rotunda'],
       },
