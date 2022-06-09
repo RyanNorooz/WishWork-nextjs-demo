@@ -1,119 +1,63 @@
 import React, { useRef } from 'react'
 
-// redux
-import { useAppDispatch } from 'redux/store'
-import { appSlice } from 'redux/slices'
-
 // material ui
 import { Typography, Box, Grid, Button, Link as MaterialLink } from '@mui/material'
 
-// emotion
-import styled from '@emotion/styled'
-
 // next
-import { GetStaticProps } from 'next'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Image from 'next/image'
 
-// translation
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useTranslation } from 'next-i18next'
-import i18nConfig from '../i18n'
-import CustomHead from 'enhancers/CustomHead'
-
-// react spring
-import { useTrail, animated } from 'react-spring'
-
-const HeadText = styled.div``
+// images
+import landingPagePhoto from '/public/images/landing-page-photo.png'
+import ellipseStar from '/public/images/ellipse-star.png'
+import hand1 from '/public/images/hand1.png'
+import hand2 from '/public/images/hand2.png'
 
 const Page = () => {
-  const { t } = useTranslation('common')
-  const WORD_TRANS = t('title.head').split('')
-  const words = useRef(WORD_TRANS.map((_, index) => index))
-  const [springs, api] = useTrail(WORD_TRANS.length, (index) => ({
-    from: { opacity: 0.1, x: 10 },
-    to: { opacity: 1, x: 0 },
-    loop: { reverse: true },
-  }))
-  const dispatch = useAppDispatch()
-
-  const router = useRouter()
-
   return (
     <div>
-      <Grid container direction="column" sx={{ alignItems: 'center', justifyContent: 'center' }}>
-        <HeadText>
-          {springs.map(({ opacity }, i) => (
-            <Typography key={i} variant="h2" sx={{ display: 'inline-block' }} color="text.primary">
-              <animated.div style={{ opacity }}>{WORD_TRANS[i]}</animated.div>
-            </Typography>
-          ))}
-        </HeadText>
-        <Typography variant="subtitle1" color="text.secondary">
-          <Link href={router.pathname} locale="en" passHref>
-            <MaterialLink
-              sx={{ color: 'text.primary', '&:hover': { color: 'primary.main' }, margin: 2 }}
-              underline="none"
-              href=""
-            >
-              English
-            </MaterialLink>
+      <header>
+        <nav>
+          <MaterialLink href="#">about me</MaterialLink>
+          <MaterialLink href="#">collections</MaterialLink>
+          <Link href="/dashboard" passHref>
+            <MaterialLink>executive works</MaterialLink>
           </Link>
-        </Typography>
-        <Typography variant="subtitle1">
-          <Link href={router.pathname} locale="de" passHref>
-            <MaterialLink
-              sx={{ color: 'text.primary', '&:hover': { color: 'primary.main' }, margin: 2 }}
-              underline="none"
-              href=""
-            >
-              Dutch
-            </MaterialLink>
-          </Link>
-        </Typography>
-        <Typography variant="subtitle1">
-          <Link href={router.pathname} locale="fa" passHref>
-            <MaterialLink
-              sx={{ color: 'text.primary', '&:hover': { color: 'primary.main' }, margin: 2 }}
-              underline="none"
-              href=""
-            >
-              Persian
-            </MaterialLink>
-          </Link>
-        </Typography>
-        <Box m={16}>
-          <Typography variant="subtitle2" color="text.primary">
-            Wish Work NEXT JS Boilerplate
+        </nav>
+      </header>
+
+      <main>
+        <section>
+          <Typography variant="h2">
+            in <span style={{ color: 'red' }}>front</span> of the world
           </Typography>
-        </Box>
-        <Button
-          variant="outlined"
-          onClick={() => {
-            dispatch(appSlice.actions.toggleTheme())
-          }}
-        >
-          {t('title.theme')}
-        </Button>
-      </Grid>
+
+          <div>
+            <Image src={ellipseStar} alt="ellipse star" />
+
+            <Typography variant="body1" style={{ width: 'clamp(5ch, 80ch, 350px)' }}>
+              "Wash up the eyes….see the otherwise" we have to observe from a new point of view, for
+              instance, the FRONT. Observance, not, perhaps scrutiny is of importance. The story of
+              our product has been uttered by the great Sohrab Sepehri. Shall this be our legacy?!
+              The FRONT collection is inspired by a poem- the footsteps of water- by a great Persian
+              poet, Sohrab Sepehri.
+            </Typography>
+          </div>
+
+          <Image
+            src={landingPagePhoto}
+            alt="inspirational stuff"
+            style={{ width: '100%', borderRadius: '71% 29% 73% 27% / 66% 26% 74% 34% ' }}
+          />
+        </section>
+
+        <section>
+          <Image src={hand1} alt="hand1" />
+          <Image src={hand2} alt="hand2" />
+        </section>
+      </main>
     </div>
   )
 }
-
-Page.getLayout = (page: React.ReactElement) => {
-  return (
-    <>
-      <CustomHead title="meta.title" openGraphTitle="head.title" />
-      {page}
-    </>
-  )
-}
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
-  props: {
-    locale,
-    ...(await serverSideTranslations(locale, ['common'], i18nConfig)),
-  },
-})
 
 export default Page
