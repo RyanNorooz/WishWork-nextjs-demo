@@ -6,8 +6,8 @@ const data = {
   datasets: [
     {
       label: 'My First dataset',
-      backgroundColor: 'darkgreen',
-      borderColor: 'darkgreen',
+      backgroundColor: '#4a8829',
+      borderColor: '#4a8829',
       pointStyle: 'circle',
       pointRadius: 7,
       pointHoverRadius: 10,
