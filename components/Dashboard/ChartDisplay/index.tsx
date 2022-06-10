@@ -8,9 +8,9 @@ import Divider from '@mui/material/Divider'
 
 import LineChart from './LineChart'
 
-export default function ChartDisplay({ className }) {
+export default function ChartDisplay(props) {
   return (
-    <div className={className}>
+    <div {...props}>
       <div style={{ display: 'flex', gap: '1rem' }}>
         <FormControl sx={{ m: 1, minWidth: 120 }}>
           <Select value={1} displayEmpty inputProps={{ 'aria-label': 'Without label' }}>

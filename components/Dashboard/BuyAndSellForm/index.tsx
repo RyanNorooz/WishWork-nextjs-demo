@@ -7,8 +7,6 @@ import Box from '@mui/material/Box'
 import PurchaseTab from './PurchaseTab'
 import SellTab from './SellTab'
 
-import TextField from '@mui/material/TextField'
-
 interface TabPanelProps {
   children?: React.ReactNode
   index: number
@@ -42,7 +40,7 @@ function a11yProps(index: number) {
   }
 }
 
-export default function BuyAndSellForm({ className }) {
+export default function BuyAndSellForm(props) {
   const [value, setValue] = React.useState(0)
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -50,7 +48,7 @@ export default function BuyAndSellForm({ className }) {
   }
 
   return (
-    <Box sx={{ width: '100%' }} className={className}>
+    <Box sx={{ width: '100%' }} {...props}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="خرید" {...a11yProps(0)} />
