@@ -8,14 +8,15 @@ import styled from '@emotion/styled'
 
 // Styles
 const Root = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
 `
 
 const Content = styled.div`
   position: relative;
-  margin-top: 8rem;
+  /*//? why tho? 👇 */
+  /* margin-top: 8rem; */
 `
 
 interface Props {

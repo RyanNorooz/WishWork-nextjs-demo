@@ -42,10 +42,10 @@ MyDocument.getInitialProps = async (ctx) => {
 
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App) =>
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      enhanceApp: (App: any) =>
         function EnhanceApp(props) {
-          //! removed because of build errors: "serverEmotionCache={cache}"
-          return <App {...props} />
+          return <App serverEmotionCache={cache} {...props} />
         },
     })
 

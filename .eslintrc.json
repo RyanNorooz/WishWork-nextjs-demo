@@ -3,7 +3,7 @@
   "extends": ["next/core-web-vitals", "airbnb-typescript", "react-app", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": ["./tsconfig.json", "./next.config.js"]
+    "project": ["./tsconfig.json"]
   },
   "settings": {
     "import/resolver": {
