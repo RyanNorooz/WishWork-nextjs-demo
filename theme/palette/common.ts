@@ -2,11 +2,11 @@ import { colors } from '@mui/material'
 
 const common = {
   primary: {
-    main: '#D1036F',
+    main: '#0070F3',
     contrastText: 'white',
   },
   secondary: {
-    main: '#0070F3',
+    main: '#00a841',
     contrastText: 'white',
   },
   error: {
