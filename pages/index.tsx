@@ -47,7 +47,7 @@ const Page = () => {
           <Image
             src={landingPagePhoto}
             alt="inspirational stuff"
-            style={{ width: '100%', borderRadius: '71% 29% 73% 27% / 66% 26% 74% 34% ' }}
+            style={{ width: '100%', borderRadius: '70% 30% 70% 30% / 70% 30% 70% 30% ' }}
           />
         </section>
 
