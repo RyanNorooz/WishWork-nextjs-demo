@@ -18,8 +18,12 @@ const Content = styled.div`
   margin-top: 8rem;
 `
 
+interface Props {
+  children: React.ReactNode
+}
+
 // Components
-const PageWrapper = ({ children }) => (
+const PageWrapper: React.FC<Props> = ({ children }) => (
   <Root>
     <Content>{children}</Content>
   </Root>
