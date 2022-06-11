@@ -43,7 +43,9 @@ export default function NavDrawer() {
     <Drawer anchor="left" open={true} variant="persistent">
       <Box sx={{ width: drawerWidth }}>
         <DrawerHeader>
-          <Typography variant="h2">محصول</Typography>
+          <Typography variant="h2" color="primary">
+            محصول
+          </Typography>
         </DrawerHeader>
         <Divider />
 
