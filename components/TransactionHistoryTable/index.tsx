@@ -9,24 +9,13 @@ import Paper from '@mui/material/Paper'
 
 import DeleteIcon from '@mui/icons-material/Delete'
 import Button from '@mui/material/Button'
+import TableRowItem from './TableRowItem'
 
-interface Props {
-  orders: Array<{
-    id: number
-    type: string
-    amount: number
-    fee: number
-    total: number
-    registerDate: string
-    finalizedDate: string
-  }>
-}
-
-export default function TransactionHistoryTable({ orders }: Props) {
+export default function TransactionHistoryTable({ orders }) {
   return (
     <div>
       <TableContainer>
-        <Table sx={{ minWidth: 650 }}  aria-label="simple table">
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell align="left">ایدی سفارش</TableCell>
@@ -41,21 +30,7 @@ export default function TransactionHistoryTable({ orders }: Props) {
           </TableHead>
           <TableBody>
             {orders.map((order) => (
-              <TableRow key={order.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                <TableCell align="left">{order.id}</TableCell>
-                <TableCell align="left">{order.type}</TableCell>
-                <TableCell align="left">{order.amount}</TableCell>
-                <TableCell align="left">{order.fee}</TableCell>
-                <TableCell align="left">{order.total}</TableCell>
-                <TableCell align="left">{order.registerDate}</TableCell>
-                <TableCell align="left">{order.finalizedDate}</TableCell>
-                <TableCell align="left">
-                  <Button variant="outlined">مشاهده</Button>
-                  <Button>
-                    <DeleteIcon color="error" />
-                  </Button>
-                </TableCell>
-              </TableRow>
+              <TableRowItem order={order} key={order.id} />
             ))}
           </TableBody>
         </Table>

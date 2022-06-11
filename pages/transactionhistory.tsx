@@ -23,6 +23,10 @@ const dummyOrders = [...Array(10)].map(() => ({
   total: Math.floor(Math.random() * 10),
   registerDate: '2020-01-01',
   finalizedDate: '2020-01-01',
+  clientName: `${Math.random() > 0.5 ? 'حسین' : 'علی'} ${Math.floor(Math.random() * 10)}`,
+  clientTel: `09${Math.floor(Math.random() * 100)}${Math.floor(Math.random() * 100)}${Math.floor(
+    Math.random() * 100
+  )}${Math.floor(Math.random() * 10)}`,
 }))
 
 const Section1 = styled.div`

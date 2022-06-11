@@ -16,7 +16,7 @@ const data = {
   ],
 }
 
-export default function LineChart() {
+export default function LineChart(props) {
   useEffect(() => {
     const myChart = new Chart(document.getElementById('myChart') as HTMLCanvasElement, {
       type: 'line',
@@ -32,7 +32,7 @@ export default function LineChart() {
   }, [])
 
   return (
-    <div>
+    <div {...props}>
       <canvas id="myChart"></canvas>
     </div>
   )

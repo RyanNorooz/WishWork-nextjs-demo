@@ -44,7 +44,7 @@ export default function TradeForm(props) {
             type="text"
             label="تعداد"
             variant="outlined"
-            value={quantity||''}
+            value={quantity || ''}
             onChange={(e) => setQuantity(parseInt(e.target.value))}
             fullWidth
           />
@@ -69,7 +69,7 @@ export default function TradeForm(props) {
           type="text"
           label="قیمت هر واحد"
           variant="outlined"
-          value={fee ||''}
+          value={fee || ''}
           onChange={(e) => setFee(parseInt(e.target.value))}
         />
         <TextField id="file" label="فایل" variant="outlined" />
@@ -81,7 +81,9 @@ export default function TradeForm(props) {
           </Typography>
         </Box>
 
-        <Button variant="contained">{operationMode === 'خرید' ? 'خرید' : 'فروش'}</Button>
+        <Button sx={{ fontWeight: 900 }} variant="contained">
+          {operationMode === 'خرید' ? 'خرید' : 'فروش'}
+        </Button>
       </Box>
     </Box>
   )
