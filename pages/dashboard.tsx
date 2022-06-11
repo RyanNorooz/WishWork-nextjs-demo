@@ -26,7 +26,7 @@ const Dashboard = () => {
     <Section1>
       <TradeForm style={{ width: '400px', padding: '1.5rem .7rem' }} />
       <Promotions style={{ width: '400px', padding: '1.5rem .7rem', background: '#f9f9f9' }} />
-      <ChartDisplay style={{ width: '700px', padding: '1.5rem .7rem' }} />
+      <ChartDisplay style={{ width: '700px' }} />
     </Section1>
   )
 }

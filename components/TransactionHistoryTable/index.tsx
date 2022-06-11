@@ -25,39 +25,41 @@ interface Props {
 export default function TransactionHistoryTable({ orders }: Props) {
   return (
     <div>
-      <table>
-        <thead>
-          <tr>
-            <th>ایدی سفارش</th>
-            <th>نوع سفارش</th>
-            <th>مقدار سفارش</th>
-            <th>قیمت هر واحد</th>
-            <th>قیمت کل</th>
-            <th>تاریخ ثبت</th>
-            <th>تاریخ نهایی شدن</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {orders.map((order) => (
-            <tr key={order.id}>
-              <td>{order.id}</td>
-              <td>{order.type}</td>
-              <td>{order.amount}</td>
-              <td>{order.fee}</td>
-              <td>{order.total}</td>
-              <td>{order.registerDate}</td>
-              <td>{order.finalizedDate}</td>
-              <td>
-                <Button variant="outlined">مشاهده</Button>
-                <Button>
-                  <DeleteIcon color="error" />
-                </Button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <TableContainer>
+        <Table sx={{ minWidth: 650 }}  aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="left">ایدی سفارش</TableCell>
+              <TableCell align="left">نوع سفارش</TableCell>
+              <TableCell align="left">مقدار سفارش</TableCell>
+              <TableCell align="left">قیمت هر واحد</TableCell>
+              <TableCell align="left">قیمت کل</TableCell>
+              <TableCell align="left">تاریخ ثبت</TableCell>
+              <TableCell align="left">تاریخ نهایی شدن</TableCell>
+              <TableCell align="left"></TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {orders.map((order) => (
+              <TableRow key={order.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                <TableCell align="left">{order.id}</TableCell>
+                <TableCell align="left">{order.type}</TableCell>
+                <TableCell align="left">{order.amount}</TableCell>
+                <TableCell align="left">{order.fee}</TableCell>
+                <TableCell align="left">{order.total}</TableCell>
+                <TableCell align="left">{order.registerDate}</TableCell>
+                <TableCell align="left">{order.finalizedDate}</TableCell>
+                <TableCell align="left">
+                  <Button variant="outlined">مشاهده</Button>
+                  <Button>
+                    <DeleteIcon color="error" />
+                  </Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   )
 }

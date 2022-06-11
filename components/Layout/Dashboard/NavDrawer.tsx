@@ -40,7 +40,7 @@ export default function NavDrawer() {
   ]
 
   return (
-    <Drawer anchor="left" open={true} variant="persistent">
+    <Drawer anchor="left" open={true} variant="permanent">
       <Box sx={{ width: drawerWidth }}>
         <DrawerHeader>
           <Typography variant="h2" color="primary">

@@ -27,11 +27,19 @@ const dummyOrders = [...Array(10)].map(() => ({
 
 const Section1 = styled.div`
   display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  h1 {
+    font-size: 2rem;
+    font-weight: 900;
+  }
 `
 
 const TransactionHistory = ({ orders }) => {
   return (
     <Section1>
+      <h1>لیست سفارش ها</h1>
+
       <TransactionHistoryTable orders={orders} />
     </Section1>
   )
