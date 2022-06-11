@@ -24,9 +24,9 @@ const Section1 = styled.div`
 const Dashboard = () => {
   return (
     <Section1>
-      <BuyAndSellForm style={{ width: '300px', padding: '1.5rem 1rem' }} />
-      <Promotions style={{ width: '400px', padding: '1.5rem 1rem', background: '#f9f9f9' }} />
-      <ChartDisplay style={{ width: '800px', padding: '1.5rem 1rem' }} />
+      <BuyAndSellForm style={{ width: '500px', padding: '1.5rem .7rem' }} />
+      <Promotions style={{ width: '400px', padding: '1.5rem .7rem', background: '#f9f9f9' }} />
+      <ChartDisplay style={{ width: '800px', padding: '1.5rem .7rem' }} />
     </Section1>
   )
 }
@@ -39,7 +39,5 @@ Dashboard.getLayout = (page: React.ReactElement) => {
     </>
   )
 }
-
-// export const getStaticProps: GetStaticProps = async ({}) => ({})
 
 export default Dashboard

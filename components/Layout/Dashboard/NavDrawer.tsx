@@ -12,6 +12,7 @@ import Box from '@mui/material/Box'
 
 import { styled } from '@mui/material/styles'
 import Divider from '@mui/material/Divider'
+import Link from 'next/link'
 
 const drawerWidth = 220
 
@@ -29,10 +30,12 @@ export default function NavDrawer() {
     {
       title: 'خانه',
       icon: <HomeIcon />,
+      address: '/dashboard',
     },
     {
       title: 'لیست',
       icon: <HistoryIcon />,
+      address: '/transactionhistory',
     },
   ]
 
@@ -45,12 +48,14 @@ export default function NavDrawer() {
         <Divider />
 
         <List>
-          {pages.map(({ title, icon }) => (
+          {pages.map(({ title, icon, address }) => (
             <ListItem key={title} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>{icon}</ListItemIcon>
-                <ListItemText primary={title} />
-              </ListItemButton>
+              <Link href={address} passHref>
+                <ListItemButton>
+                  <ListItemIcon>{icon}</ListItemIcon>
+                  <ListItemText primary={title} />
+                </ListItemButton>
+              </Link>
             </ListItem>
           ))}
         </List>
