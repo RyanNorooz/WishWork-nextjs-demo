@@ -6,14 +6,16 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
-
 import DeleteIcon from '@mui/icons-material/Delete'
 import Button from '@mui/material/Button'
 import TableRowItem from './TableRowItem'
+import Pagination from '@mui/material/Pagination'
+import Stack from '@mui/material/Stack'
+import Box from '@mui/material/Box'
 
 export default function TransactionHistoryTable({ orders }) {
   return (
-    <div>
+    <Box>
       <TableContainer>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
@@ -35,6 +37,12 @@ export default function TransactionHistoryTable({ orders }) {
           </TableBody>
         </Table>
       </TableContainer>
-    </div>
+
+      <Box sx={{ m: '1rem', display: 'flex', justifyContent: 'space-around' }}>
+        <Stack spacing={2} sx={{ background: '#eee', borderRadius: '2em', width: 'fit-content' }}>
+          <Pagination count={10} color="warning" />
+        </Stack>
+      </Box>
+    </Box>
   )
 }
