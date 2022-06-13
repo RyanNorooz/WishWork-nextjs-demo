@@ -17,6 +17,17 @@ class MyDocument extends Document {
           <link sizes="180x180" href="/icons/apple-touch-icon.png" />
           <link rel="manifest" href="/manifest.json" />
           <link rel="icon" href="/icons/favicon.ico" />
+
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap&text=INFRONTOFTHEWORLD"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body>
           <Main />
