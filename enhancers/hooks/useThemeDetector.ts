@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { useAppDispatch } from 'redux/store'
+
 import appSlice from 'redux/slices/app/slice'
+import { useAppDispatch } from 'redux/store'
 
 const useThemeDetector = () => {
   const theme = useSelector((state) => state.app.theme)

@@ -6,7 +6,7 @@ const common = {
     contrastText: 'white',
   },
   secondary: {
-    main: '#00a841',
+    main: '#f1b44c',
     contrastText: 'white',
   },
   error: {

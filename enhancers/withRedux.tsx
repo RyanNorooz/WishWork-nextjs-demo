@@ -3,8 +3,8 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 
 // Libs
-import { store, persistor } from 'redux/store'
 import ConditionalWrapper from './ConditionalWrapper'
+import { store, persistor } from 'redux/store'
 
 type Props = {
   children: React.ReactElement

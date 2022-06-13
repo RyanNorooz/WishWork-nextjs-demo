@@ -1,19 +1,14 @@
-import React, { useRef } from 'react'
-
-// material ui
-import { Typography, Box, Grid, Button, Link as MaterialLink } from '@mui/material'
-
-// next
+import React from 'react'
+import { Typography, Link as MaterialLink } from '@mui/material'
 import Link from 'next/link'
 import Image from 'next/image'
 
-// images
 import landingPagePhoto from '/public/images/landing-page-photo.png'
 import ellipseStar from '/public/images/ellipse-star.png'
 import hand1 from '/public/images/hand1.png'
 import hand2 from '/public/images/hand2.png'
 
-const Page = () => {
+export default function Home() {
   return (
     <div>
       <header>
@@ -59,5 +54,3 @@ const Page = () => {
     </div>
   )
 }
-
-export default Page

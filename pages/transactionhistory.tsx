@@ -1,19 +1,11 @@
+
+import styled from '@emotion/styled'
+import { GetServerSideProps } from 'next'
 import React from 'react'
 
-// material ui
-import { Typography, Box, Grid, Button, Link as MaterialLink } from '@mui/material'
-
-// next
-import { GetServerSideProps } from 'next'
-import Link from 'next/link'
-
-// emotion
-import styled from '@emotion/styled'
-
-// components
-import CustomHead from 'enhancers/CustomHead'
 import MainPageLayout from 'components/Layout/Dashboard'
 import TransactionHistoryTable from 'components/TransactionHistoryTable'
+import CustomHead from 'enhancers/CustomHead'
 
 const dummyOrders = [...Array(6)].map((_, index) => ({
   id: index + 1,
@@ -27,7 +19,7 @@ const dummyOrders = [...Array(6)].map((_, index) => ({
   clientTel: `09${Math.floor(Math.random() * 1000000000)}`,
 }))
 
-const Section1 = styled.div`
+const Section1 = styled.section`
   display: flex;
   flex-direction: column;
   padding: 5rem;
@@ -37,7 +29,7 @@ const Section1 = styled.div`
   }
 `
 
-const TransactionHistory = ({ orders }) => {
+export default function TransactionHistory({ orders }) {
   return (
     <Section1>
       <h1>لیست سفارش ها</h1>
@@ -59,5 +51,3 @@ TransactionHistory.getLayout = (page: React.ReactElement) => {
 export const getServerSideProps: GetServerSideProps = async () => ({
   props: { orders: dummyOrders },
 })
-
-export default TransactionHistory

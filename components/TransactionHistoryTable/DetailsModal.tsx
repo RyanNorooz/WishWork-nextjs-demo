@@ -1,23 +1,17 @@
-import * as React from 'react'
-import Table from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableHead from '@mui/material/TableHead'
-import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
-
-import DeleteIcon from '@mui/icons-material/Delete'
+import CloseIcon from '@mui/icons-material/Close'
+import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import { useState } from 'react'
+import IconButton from '@mui/material/IconButton'
+import Modal from '@mui/material/Modal'
+import TableCell from '@mui/material/TableCell'
+import TableRow from '@mui/material/TableRow'
+import Typography from '@mui/material/Typography'
+import * as React from 'react'
+
 import type { Order } from 'types/orders'
 
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import Modal from '@mui/material/Modal'
-
 const style = {
-  position: 'absolute' as 'absolute',
+  position: 'relative',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
@@ -44,6 +38,13 @@ export default function DetailsModal({ open, setOpen, orderData }: Props) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+          <IconButton
+            aria-label="close"
+            sx={{ position: 'absolute', top: '1rem', right: '1rem' }}
+            onClick={() => setOpen(false)}
+          >
+            <CloseIcon />
+          </IconButton>
           <Typography
             id="modal-modal-title"
             variant="h6"

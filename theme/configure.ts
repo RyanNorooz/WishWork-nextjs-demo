@@ -1,8 +1,8 @@
 import { createTheme } from '@mui/material/styles'
 
 // import components from './components';
-import shape from './shape'
 import palette from './palette'
+import shape from './shape'
 import typography from './typography'
 // import background from './background';
 

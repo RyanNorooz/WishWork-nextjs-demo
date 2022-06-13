@@ -1,21 +1,19 @@
-import React, { useMemo, useEffect, useState } from 'react'
-import { ThemeProvider } from '@mui/material/styles'
-// import createCache from '@emotion/cache'
-import { useRouter } from 'next/router'
-import { useSelector } from 'react-redux'
-import useThemeDetector from 'enhancers/hooks/useThemeDetector'
-import { useAppDispatch } from 'redux/store'
-import { CacheProvider, EmotionCache } from '@emotion/react'
-import createEmotionCache from 'enhancers/createEmotionCache'
+import { CacheProvider } from '@emotion/react'
 import CssBaseline from '@mui/material/CssBaseline'
-import { i18n } from '../i18n'
+import { ThemeProvider } from '@mui/material/styles'
 import Head from 'next/head'
-
-// Actions
-import appSlice from 'redux/slices/app/slice'
-
+import { useRouter } from 'next/router'
+import React, { useMemo } from 'react'
+import { useSelector } from 'react-redux'
+import { i18n } from '../i18n'
+// import { useAppDispatch } from 'redux/store'
 // import rtlPlugin from 'stylis-plugin-rtl';
+
+
+// import appSlice from 'redux/slices/app/slice'
 import configTheme from '../theme/configure'
+import createEmotionCache from 'enhancers/createEmotionCache'
+import useThemeDetector from 'enhancers/hooks/useThemeDetector'
 
 // Constants
 // import APP_CONSTANTS from 'constants/app';

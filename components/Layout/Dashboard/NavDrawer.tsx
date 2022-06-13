@@ -1,25 +1,22 @@
-import * as React from 'react'
-
-// matterial ui
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import HistoryIcon from '@mui/icons-material/History'
+import HomeIcon from '@mui/icons-material/Home'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Divider from '@mui/material/Divider'
 import Drawer from '@mui/material/Drawer'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import Typography from '@mui/material/Typography'
-import HomeIcon from '@mui/icons-material/Home'
-import HistoryIcon from '@mui/icons-material/History'
-import Box from '@mui/material/Box'
-import Divider from '@mui/material/Divider'
-import Link from 'next/link'
-import Button from '@mui/material/Button'
-import DarkModeIcon from '@mui/icons-material/DarkMode'
 import { styled } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
+import Link from 'next/link'
+import * as React from 'react'
 
-// redux
-import { useAppDispatch } from 'redux/store'
 import { appSlice } from 'redux/slices'
+import { useAppDispatch } from 'redux/store'
 
 const drawerWidth = 220
 

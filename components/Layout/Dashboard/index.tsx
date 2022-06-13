@@ -1,6 +1,7 @@
-import * as React from 'react'
-import NavDrawer from './NavDrawer'
 import styled from '@emotion/styled'
+import * as React from 'react'
+
+import NavDrawer from './NavDrawer'
 
 interface Props {
   children: React.ReactNode

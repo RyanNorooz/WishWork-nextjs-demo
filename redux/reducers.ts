@@ -1,8 +1,8 @@
-import { persistReducer } from 'redux-persist'
 import { combineReducers } from 'redux'
+import { persistReducer } from 'redux-persist'
+import createWebStorage from 'redux-persist/lib/storage/createWebStorage'
 
 import { appSlice } from './slices'
-import createWebStorage from 'redux-persist/lib/storage/createWebStorage'
 
 /*
 	redux-persist error in server came from this file.

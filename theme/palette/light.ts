@@ -1,4 +1,3 @@
-import { colors } from '@mui/material'
 import common from './common'
 
 const light = {

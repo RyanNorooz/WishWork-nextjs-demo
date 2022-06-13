@@ -1,5 +1,6 @@
 import createCache from '@emotion/cache'
 import rtlPlugin from 'stylis-plugin-rtl'
+
 import type { Direction } from 'theme/type'
 
 // prepend: true moves MUI styles to the top of the <head> so they're loaded first.

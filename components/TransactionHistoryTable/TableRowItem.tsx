@@ -1,16 +1,12 @@
-import * as React from 'react'
-import Table from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableHead from '@mui/material/TableHead'
-import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
-
 import DeleteIcon from '@mui/icons-material/Delete'
 import Button from '@mui/material/Button'
-import DetailsModal from './DetailsModal'
+import IconButton from '@mui/material/IconButton'
+import TableCell from '@mui/material/TableCell'
+import TableRow from '@mui/material/TableRow'
+import * as React from 'react'
 import { useState } from 'react'
+
+import DetailsModal from './DetailsModal'
 import type { Order } from 'types/orders'
 
 interface Props {
@@ -29,13 +25,14 @@ export default function TableRowItem({ order }: Props) {
         <TableCell align="left">{order.total}</TableCell>
         <TableCell align="left">{order.registerDate}</TableCell>
         <TableCell align="left">{order.finalizedDate}</TableCell>
-        <TableCell align="left">
+        <TableCell align="left" sx={{ display: 'flex', gap: '1rem' }}>
           <Button variant="outlined" onClick={() => setModalOpen(true)}>
             مشاهده
           </Button>
-          <Button>
-            <DeleteIcon color="error" />
-          </Button>
+
+          <IconButton color="error" aria-label="delete">
+            <DeleteIcon />
+          </IconButton>
         </TableCell>
       </TableRow>
       <DetailsModal orderData={order} open={modalOpen} setOpen={setModalOpen} />
